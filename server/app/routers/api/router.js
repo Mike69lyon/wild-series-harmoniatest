@@ -4,19 +4,29 @@ const router = express.Router();
 
 const { sayWelcome } = require("../../controllers/sayActions");
 
-router.get("/", sayWelcome)
+router.get("/", sayWelcome);
 
 /* ************************************************************************* */
 // Import And Use Routers Here
 /* ************************************************************************* */
 
+/* Add these *************************************************************** */
 const itemsRouter = require("./items/router");
 
 router.use("/items", itemsRouter);
+/* ************************************************************************* */
 
 const programsRouter = require("./programs/router");
 
-router.use("/programs", programsRouter);
+
+router.use("/program", programsRouter);
+
+const categoriesRouter = require("./caregories/router");
+
+router.use("/categories", categoriesRouter);
+
+
+
 
 /* ************************************************************************* */
 
